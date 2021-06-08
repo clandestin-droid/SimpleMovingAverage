@@ -16,7 +16,7 @@ end = dt.datetime.now()
 #Getting the data
 data = data.DataReader('BTC-USD', 'yahoo', start, end)
 
-#Calculate MA_120
+#Calculate MA_42
 data["MA_42"] = data.Close.rolling(42).mean()
 data["difference"] = data["Close"]-data.MA_42
 data["returns"] = data.Close.pct_change()
